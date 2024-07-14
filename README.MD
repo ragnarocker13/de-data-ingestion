@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 First, let's create an SQLite database, assigning the respective datatypes for each column (testdb.sql file).
 
-### SQL Code
+### SQL Code (testdb.sql)
 
 ```sql
 -- create the table
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS titanic(
 
 Next, we'll populate the SQLite database with data from a CSV file (tested.csv), and then clean up the database by removing duplicates.
 
-### Python Code
+### Python Code (populate.py)
 
 ```python
 import csv
@@ -96,9 +96,9 @@ print("Data imported successfully!")
 
 ```
 
-After the table has been populated, we perform a simple cleanup by removing rows with null values. (cleanup.sql file)
+After the table has been populated, we perform a simple cleanup by removing rows with null values.
 
-### SQL Code
+### SQL Code (cleanup.sql)
 
 ```SQL
 -- cleanup the table removing null values
@@ -115,7 +115,7 @@ where age = "";
 
 As a final step, we'll create a simple API using Flask to output the data from the SQLite database in JSON format.
 
-### Python Code
+### Python Code (app.py)
 
 ```python
 from flask import Flask, jsonify
